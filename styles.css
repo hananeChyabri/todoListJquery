@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+
+  /* Couleur neutre pour l'arrière-plan */
+  box-sizing: border-box;
+}
+.container
+{
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+.todo-list
+{
+  width: 100%;
+  max-width: 450px;
+  background: #fff;
+  margin: 100px auto 20px;
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+}
+
+.todo-list h1{
+display: flex;
+align-items: center;
+margin-bottom: 20px;
+}
+
+.todo-list h1 img{
+  width: 30px;
+  margin-left: 10px;
+}
+
+form{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #edeef0;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+
+input{
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px;
+  font-weight: 14px;
+}
+
+button{
+  border: none;
+  outline: none;
+  padding: 16px 50px;
+  background: #ff5945;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 40px;
+}
+
+ul li{
+  list-style: none;
+  font-size: 17px;
+  padding: 20px 8px 12px 50px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+}
+
+ul li::before
+{
+  content: '';
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+   background-image: url("assets/images/unchecked.png"); 
+   background-size: cover; 
+  background-position: center;
+  top:12px;
+  left:8px;
+}
+
+ul li.checked
+{
+  color: #555;
+  text-decoration: line-through;
+}
+
+ul li.checked::before
+{
+  background-image: url("assets/images/checked.jpg"); 
+}
+
+ul li span 
+{
+  position: absolute;
+  right: 0;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  color: #555;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+ul li span:hover
+{
+  background: #edeef0;
+}
+/* h1 {
+  text-align: center;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  width: 300px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+li {
+  margin: 10px 0;
+}
+
+.task__todo {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+
+.btn-add {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #825d63;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+.btn-add:hover {
+  background-color: #8D4B55;
+}
+
+
+
+.liste-taches {
+  list-style: none;
+  padding: 0;
+} */
+
+/* Style pour chaque élément li */
+li {
+  margin-bottom: 5px;
+}
+
+/* Style pour le bouton de suppression */
+li>button {
+  padding: 4px 8px;
+  font-size: 14px;
+  background-color: #ff3333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+/* Style au survol du bouton de suppression */
+li>button:hover {
+  background-color: #cc0000;
+}
