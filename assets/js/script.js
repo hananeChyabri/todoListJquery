@@ -14,10 +14,11 @@ $('.btn-add').click(function (event) {
    // saveData();
 });
 
+
 function deleteElement()
 {
     $(this).parent().remove();
-    saveData();
+   // saveData();
 }
 function valider()
 {
