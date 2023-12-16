@@ -2,7 +2,6 @@
 let lists_todo = $('.lists__Todo');
 
 $('.btn-add').click(function (event) {
-    console.log
     event.preventDefault();
     let buttonDelete = $("<span>x</span>")
     let newListItem = $("<li></li>").text($(".task__todo").val());
@@ -11,33 +10,40 @@ $('.btn-add').click(function (event) {
     buttonDelete.on('click', deleteElement);
     newListItem.appendTo("ul");
     $(".task__todo").val("").focus();
-   // saveData();
+    saveData();
 });
 
 
 function deleteElement()
 {
     $(this).parent().remove();
-   // saveData();
+    saveData();
 }
 function valider()
 {
     $(this).toggleClass('checked');
-//    saveData();
+   saveData();
 }
 
 
-// function saveData() {
-//     localStorage.setItem("data", $('.lists__Todo').);
-// }
+function saveData() {
+    localStorage.setItem("data", lists_todo.html()); // Utilisation de html() au lieu de innerHTLM
+}
 
-// // Affiche les données sauvegardées depuis localStorage
-// function showTask() {
-//     $('.lists__Todo').html(localStorage.getItem("data"));
-// }
+ // Affiche les données sauvegardées depuis localStorage
+ function showTask() {
+    let data = localStorage.getItem("data");
+    if (data) {
+        lists_todo.html(data);
+        lists_todo.find('li').each(function() {
+            $(this).on('click', valider);
+            $(this).find('span').on('click', deleteElement);
+        });
+    }
+}
 
-// // Appel de la fonction pour afficher les données sauvegardées
-// showTask();
+ // Appel de la fonction pour afficher les données sauvegardées
+ showTask();
 
 
 
